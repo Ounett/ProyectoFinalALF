@@ -103,20 +103,6 @@ make test
 
 Esto ejecuta las pruebas del motor, la interfaz web y la API local.
 
-## Documentación
-
-Los documentos de la entrega se encuentran en la carpeta `doc/`.
-
-Si necesitas volver a generar los PDF a partir de sus archivos HTML, instala
-LibreOffice y ejecuta:
-
-```bash
-make docs
-```
-
-El comando convierte los archivos HTML de `doc/` y guarda los PDF generados en
-la misma carpeta.
-
 ## Interfaz de terminal
 
 La interfaz web es la forma recomendada para usar el proyecto. La CLI se
