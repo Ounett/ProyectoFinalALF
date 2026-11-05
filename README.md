@@ -95,34 +95,27 @@ ASCII.
 
 ## Verificación del proyecto
 
-Desde Linux, ejecuta:
+Para comprobar que el proyecto funciona, ejecuta en Linux:
 
 ```bash
 make test
 ```
 
-El comando comprueba el motor, la interfaz web y la API local.
+Esto ejecuta las pruebas del motor, la interfaz web y la API local.
 
-Para generar los documentos PDF de la entrega:
+## Documentación
+
+Los documentos de la entrega se encuentran en la carpeta `doc/`.
+
+Si necesitas volver a generar los PDF a partir de sus archivos HTML, instala
+LibreOffice y ejecuta:
 
 ```bash
 make docs
 ```
 
-Se generan en `doc/` el reporte técnico, el manual de usuario y los casos de
-prueba. Los archivos HTML de esa carpeta son las fuentes editables de los PDF.
-
-## Entrega académica
-
-La carpeta `doc/` contiene la documentación técnica solicitada:
-
-- `reporte-tecnico.pdf`: algoritmos ER → AFND → AFD y complejidad.
-- `manual-usuario.pdf`: instalación, ejecución y operadores.
-- `casos-de-prueba.pdf`: casos funcionales y evidencia reproducible.
-
-Antes de entregar, ejecuta `make test` y `make docs`. Si se requiere un enlace
-de GitHub o GitLab, inicializa un repositorio remoto y publica el contenido de
-esta carpeta, incluyendo `doc/`.
+El comando convierte los archivos HTML de `doc/` y guarda los PDF generados en
+la misma carpeta.
 
 ## Interfaz de terminal
 
