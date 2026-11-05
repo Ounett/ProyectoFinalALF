@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Lanzador de la interfaz local. El navegador es la interfaz, Python es el motor.
+cd "$(dirname "$0")" || exit 2
+exec python3 -m erafd.web.server "$@"

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ER a AFD</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>ER a AFD</h1>
+      <p>Convertidor de expresiones regulares</p>
+    </header>
+
+    <form id="formulario">
+      <div class="campos">
+        <div>
+          <label for="expresion">Expresión regular</label>
+          <input id="expresion" name="expresion" value="(a|b)*abb" maxlength="320" spellcheck="false" autocomplete="off" required>
+        </div>
+        <div>
+          <label for="cadena">Cadena para evaluar</label>
+          <input id="cadena" name="cadena" value="aabb" maxlength="4000" spellcheck="false" autocomplete="off">
+        </div>
+      </div>
+      <div class="acciones">
+        <button id="convertir" type="submit">Convertir y evaluar</button>
+        <button id="limpiar" type="button" class="secundario">Limpiar</button>
+      </div>
+      <p class="ayuda">Ejemplo: <code>(a|b)*abb</code> con la cadena <code>aabb</code>. Deja la cadena vacía para probar ε.</p>
+    </form>
+
+    <p id="error" role="alert" hidden></p>
+
+    <section id="resultados" aria-label="Resultados" hidden>
+      <div class="resumen">
+        <h2 id="resultado-texto">Resultado</h2>
+        <p id="conteo"></p>
+      </div>
+      <nav class="pestanas" aria-label="Ver resultados">
+        <button type="button" data-tab="recorrido" class="activo" aria-pressed="true">Recorrido</button>
+        <button type="button" data-tab="afnd" aria-pressed="false">Tabla AFND</button>
+        <button type="button" data-tab="afd" aria-pressed="false">Tabla AFD</button>
+        <button type="button" data-tab="diagrama" aria-pressed="false">Diagramas</button>
+      </nav>
+      <section id="vista-recorrido" class="vista">
+        <h3>Evaluación de la cadena</h3>
+        <div id="recorrido" class="texto-monospaciado"></div>
+      </section>
+      <section id="vista-afnd" class="vista" hidden>
+        <h3>AFND</h3>
+        <p id="afnd-datos"></p>
+        <div class="tabla-scroll"><table><thead><tr><th>Estado</th><th>Símbolo</th><th>Destino</th></tr></thead><tbody id="afnd-tabla"></tbody></table></div>
+      </section>
+      <section id="vista-afd" class="vista" hidden>
+        <h3>AFD</h3>
+        <p id="afd-datos"></p>
+        <div class="tabla-scroll"><table><thead><tr><th>Estado</th><th>Símbolo</th><th>Destino</th></tr></thead><tbody id="afd-tabla"></tbody></table></div>
+        <details><summary>Conjuntos de estados</summary><pre id="conjuntos"></pre></details>
+      </section>
+      <section id="vista-diagrama" class="vista" hidden>
+        <div class="cabecera-diagrama">
+          <h3>Diagrama</h3>
+          <label for="tipo-diagrama">Mostrar
+            <select id="tipo-diagrama">
+              <option value="dfa">AFD</option>
+              <option value="nfa">AFND</option>
+            </select>
+          </label>
+        </div>
+        <div id="dibujo" role="img" aria-label="Diagrama del autómata"></div>
+        <p id="nota-diagrama" class="ayuda"></p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
