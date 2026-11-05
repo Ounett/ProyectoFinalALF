@@ -114,3 +114,6 @@ mantiene para automatización y evaluación:
 
 Su código de salida es `1` si acepta la cadena, `0` si la rechaza y `2` si
 existe un error de entrada.
+
+-Ounett-
+
